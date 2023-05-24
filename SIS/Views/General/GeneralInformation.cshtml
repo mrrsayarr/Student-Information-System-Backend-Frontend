@@ -1,9 +1,9 @@
-﻿@model IEnumerable<SIS.Models.Students>
+﻿
+@model IEnumerable<SIS.Models.Students>
 
 @{
-    ViewData["Title"] = "Student Page";
+    ViewData["Title"] = "General Information";
 }
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +68,7 @@
                                 <a class="nav-link" asp-area="" asp-controller="General" asp-action="ConsultantInfo">Consultant Information</a>
                                 <a class="nav-link" asp-area="" asp-controller="General" asp-action="LessonTaken">Lessons Taken</a>
                                 <a class="nav-link" asp-area="" asp-controller="General" asp-action="ExamSchedule">Exam Schedule</a>
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Syllabus <!--Mufredat--></a>
+                                <a class="nav-link" asp-area="" asp-controller="Home"    asp-action="Index">Syllabus <!--Mufredat--></a>
                                 <a class="nav-link" asp-area="" asp-controller="General" asp-action="IntershipInfo">Internship Information</a>
                                 <a class="nav-link" asp-area="" asp-controller="General" asp-action="YOKSIS">YOKSIS Transactions </a>
                             </nav>
@@ -104,7 +104,6 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Charts
                         </a>
-
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
@@ -115,17 +114,7 @@
         </div>
         <div id="layoutSidenav_content">
             <main>
-                <div class="container">
                     <h2> List of Students</h2>
-
-                    <a class="btn btn-primary btn-sm mt-2 mb-3 p-2" asp-action="Create"> New Student Modal </a>
-                    <form asp-controller="Students" asp-action="Index">
-                        <p>
-                            <input type="text" name="SearchString" />
-                            <input type="submit" value="Search" />
-                        </p>
-                    </form>
-
                     <table border="1" class="table table-bordered table-responsive w-100">
                         <thead>
                             <tr>
@@ -163,7 +152,7 @@
                                     @Html.DisplayNameFor(model => model.IdentificationNumber)
                                 </th>
                                 <th>
-									
+                                    Details
                                 </th>
                             </tr>
                         </thead>
@@ -205,25 +194,18 @@
                                         @Html.DisplayFor(modelItem => item.IdentificationNumber)
                                     </td>
                                     <td class="btn-group-sm">
-                                        <a asp-action="Edit" class="btn btn-primary btn-sm m-1"  asp-route-id="@item.Id">Edit</a>
-                                        <a asp-action="Details" class="btn btn-primary btn-sm m-1" asp-route-id="@item.Id">Details</a>
-                                        <a asp-action="Delete" class="btn btn-danger btn-sm m-1"  asp-route-id="@item.Id">Delete</a>
+                                        <a asp-controller="Students" asp-action="Index" class="btn btn-primary btn-sm m-1" asp-route-id="@item.Id">Edit</a>
+                                        <a asp-controller="Students" asp-action="Index" class="btn btn-primary btn-sm m-1" asp-route-id="@item.Id">Details</a>
+                                        <a asp-controller="Students" asp-action="Index" class="btn btn-danger btn-sm m-1" asp-route-id="@item.Id">Delete</a>
                                     </td>
                                 </tr>
                             }
                         </tbody>
                     </table>
-                </div>
             </main>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="~/js/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="~/js/demo/chart-area-demo.js"></script>
-    <script src="~/js/demo/chart-bar-demo.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-    <script src="~/js/datatables-simple-demo.js"></script>
 </body>
 </html>

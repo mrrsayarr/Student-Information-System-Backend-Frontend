@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\muham\\Downloads\\SIS\\SIS\\SIS\\SIS.csproj": {}
+    "C:\\Users\\muham\\Downloads\\SIS\\SIS\\SIS\\SIS\\SIS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\muham\\Downloads\\SIS\\SIS\\SIS\\SIS.csproj": {
+    "C:\\Users\\muham\\Downloads\\SIS\\SIS\\SIS\\SIS\\SIS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\muham\\Downloads\\SIS\\SIS\\SIS\\SIS.csproj",
+        "projectUniqueName": "C:\\Users\\muham\\Downloads\\SIS\\SIS\\SIS\\SIS\\SIS.csproj",
         "projectName": "SIS",
-        "projectPath": "C:\\Users\\muham\\Downloads\\SIS\\SIS\\SIS\\SIS.csproj",
+        "projectPath": "C:\\Users\\muham\\Downloads\\SIS\\SIS\\SIS\\SIS\\SIS.csproj",
         "packagesPath": "C:\\Users\\muham\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\muham\\Downloads\\SIS\\SIS\\SIS\\obj\\",
+        "outputPath": "C:\\Users\\muham\\Downloads\\SIS\\SIS\\SIS\\SIS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\muham\\AppData\\Roaming\\NuGet\\NuGet.Config",
