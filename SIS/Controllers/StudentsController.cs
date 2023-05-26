@@ -33,6 +33,7 @@ namespace SIS.Controllers
                 students = students.Where(s => s.FirstName.Contains(searchString)
                                        || s.LastName.Contains(searchString));
             }
+            
             return View(await students.ToListAsync());
         }
         
@@ -74,6 +75,7 @@ namespace SIS.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(students);
         }
 
@@ -90,6 +92,8 @@ namespace SIS.Controllers
             {
                 return NotFound();
             }
+
+            
             return View(students);
         }
 
@@ -125,6 +129,7 @@ namespace SIS.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
             return View(students);
         }
 
@@ -143,6 +148,7 @@ namespace SIS.Controllers
                 return NotFound();
             }
 
+
             return View(students);
         }
 
@@ -160,7 +166,7 @@ namespace SIS.Controllers
             {
                 _context.Students.Remove(students);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

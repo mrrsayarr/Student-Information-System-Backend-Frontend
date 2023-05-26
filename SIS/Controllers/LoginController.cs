@@ -10,13 +10,6 @@ namespace SIS.Controllers
 {
     public class LoginController : Controller
     {
-        //public ActionResult Index()
-        //{
-        //    Login model = new Login();
-        //    return View(model);
-        //}
-
-
         // [Authorize] // Böylece bu sayfaya sadece oturumu açılmış kullanıcılar erişebilecektir
         public IActionResult Index(Login model)
         {
@@ -39,9 +32,30 @@ namespace SIS.Controllers
 
                         if (reader.Read())
                         {
-                            // Redirect the user to the home page
-                            return RedirectToAction("Index", "Home");
+                            string role = reader["Authority"].ToString(); // Rol bilgisini veritabanından al
+
+                            // return RedirectToAction("Index", "Home");
+
+                            if (role.Equals("Student", StringComparison.OrdinalIgnoreCase))
+                            {
+                                // Student ise farklı bir sayfaya yönlendir
+                                return RedirectToAction("Index", "Home");
+
+                                //ModelState.AddModelError("", "Invalid username or password.");
+                                //return View(model);
+                            }
+                            else if (role.Equals("Academist", StringComparison.OrdinalIgnoreCase))
+                            {
+                                // Academist ise başka bir sayfaya yönlendir
+                                return RedirectToAction("Index", "Home");
+                            }
+                            else if (role.Equals("Student Affairs", StringComparison.OrdinalIgnoreCase))
+                            {
+                                // Student Affairs ise Home/Index sayfasına yönlendir
+                                return RedirectToAction("Index", "Home");
+                            }
                         }
+
                         else
                         {
                             // Geçersiz kullanıcı adı veya şifre hatası
@@ -56,6 +70,14 @@ namespace SIS.Controllers
                 return View(model);
             }
 
+        }
+
+        public IActionResult Logout()
+        {
+            // Oturumu sonlandır
+            HttpContext.Session.Clear();
+
+            return RedirectToAction("Index", "Login");
         }
 
 
