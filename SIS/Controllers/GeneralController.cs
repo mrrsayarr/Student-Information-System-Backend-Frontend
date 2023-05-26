@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using SIS.Data;
+using SIS.Models;
 
 namespace SIS.Controllers
 {
@@ -12,10 +14,6 @@ namespace SIS.Controllers
         }
 
         // ---------------------------------------
-        //public IActionResult GeneralInformation()
-        //{
-        //    return View();
-        //}
         private readonly SISContext _context;
 
         public GeneralController(SISContext context)
@@ -44,10 +42,15 @@ namespace SIS.Controllers
             return View();
         }
 
-        public IActionResult ExamResult()
+
+        public IActionResult ExamResult() // Working bro
         {
-            return View();
+            List<Generals> examResults = _context.ExamResults.ToList();
+
+            return View(examResults);
         }
+
+
 
         public IActionResult Charts()
         {

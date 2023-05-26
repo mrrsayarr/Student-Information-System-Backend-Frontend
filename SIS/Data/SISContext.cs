@@ -17,5 +17,6 @@ namespace SIS.Data
         public DbSet<SIS.Models.Students> Students { get; set; } = default!;
 
         public DbSet<SIS.Models.Login>? Login { get; set; }
+        public DbSet<SIS.Models.Generals>? ExamResults { get; set; }
     }
 }
