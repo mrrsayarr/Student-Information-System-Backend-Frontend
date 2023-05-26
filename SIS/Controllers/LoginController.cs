@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using SIS.Data;
@@ -15,6 +16,8 @@ namespace SIS.Controllers
         //    return View(model);
         //}
 
+
+        // [Authorize] // Böylece bu sayfaya sadece oturumu açılmış kullanıcılar erişebilecektir
         public IActionResult Index(Login model)
         {
             using (var _connection = new SqlConnection("Data Source=.;Initial Catalog=SIS.Data;Integrated Security=True"))
@@ -39,15 +42,21 @@ namespace SIS.Controllers
                             // Redirect the user to the home page
                             return RedirectToAction("Index", "Home");
                         }
+                        else
+                        {
+                            // Geçersiz kullanıcı adı veya şifre hatası
+                            ModelState.AddModelError("", "Invalid username or password.");
+                            ViewBag.ErrorMessage = "Invalid username or password. Please try again.";
+                        }
                     }
                 }
 
                 // Show an error message
                 ModelState.AddModelError("", "Invalid username or password.");
                 return View(model);
-        }
+            }
 
-    }
+        }
 
 
         public ActionResult LoginAdmin()

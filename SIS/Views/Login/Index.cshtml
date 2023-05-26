@@ -1,6 +1,10 @@
 ﻿
 @model SIS.Models.Login
 
+@{
+    ViewData["Title"] = "Login Student";
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,6 +46,12 @@
                                 <form>
                                     @using (Html.BeginForm())
                                     {
+                                        // Uyarı Mesajı
+                                        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                                        {
+                                            <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+                                        }
+
                                         <label for="Username">Student Number</label>
                                         <div class="form-floating mb-3">
                                                 @Html.TextBoxFor(x => x.Username, new { @class = "form-control p-2", @placeholder = "Username" })
