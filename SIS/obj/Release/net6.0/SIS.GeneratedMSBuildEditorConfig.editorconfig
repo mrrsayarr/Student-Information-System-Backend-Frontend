@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\muham\Downloads\SIS\SIS\SIS\SIS
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/muham/Downloads/SIS/SIS/SIS/SIS/Views/General/AcademicCalendar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhbFxBY2FkZW1pY0NhbGVuZGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/muham/Downloads/SIS/SIS/SIS/SIS/Views/General/Charts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhbFxDaGFydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

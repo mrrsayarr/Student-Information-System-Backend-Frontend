@@ -73,6 +73,11 @@ namespace SIS.Controllers
         {
             return View();
         }
+
+        public IActionResult AcademicCalendar()
+        {
+            return View();
+        }
     }
 
 }
