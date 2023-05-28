@@ -115,6 +115,7 @@
         <div id="layoutSidenav_content">
             <main>
                     <h2> List of Students</h2>
+                    <a asp-controller="Students" asp-action="Index" class="btn btn-primary btn-sm mt-2 mb-3">Show Details</a>
                     <table border="1" class="table table-bordered table-responsive w-100">
                         <thead>
                             <tr>
@@ -126,9 +127,6 @@
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Department)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Email)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Address)
@@ -151,9 +149,9 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.IdentificationNumber)
                                 </th>
-                                <th>
+@*                                <th>
                                     Details
-                                </th>
+                                </th>*@
                             </tr>
                         </thead>
                         <tbody>
@@ -168,9 +166,6 @@
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Department)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Email)
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Address)
@@ -193,11 +188,11 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.IdentificationNumber)
                                     </td>
-                                    <td class="btn-group-sm">
+@*                                    <td class="btn-group-sm">
                                         <a asp-controller="Students" asp-action="Index" class="btn btn-primary btn-sm m-1" asp-route-id="@item.Id">Edit</a>
                                         <a asp-controller="Students" asp-action="Index" class="btn btn-primary btn-sm m-1" asp-route-id="@item.Id">Details</a>
                                         <a asp-controller="Students" asp-action="Index" class="btn btn-danger btn-sm m-1" asp-route-id="@item.Id">Delete</a>
-                                    </td>
+                                    </td>*@
                                 </tr>
                             }
                         </tbody>

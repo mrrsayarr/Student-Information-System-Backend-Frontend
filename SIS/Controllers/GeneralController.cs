@@ -51,7 +51,6 @@ namespace SIS.Controllers
         }
 
 
-
         public IActionResult Charts()
         {
             return View();
