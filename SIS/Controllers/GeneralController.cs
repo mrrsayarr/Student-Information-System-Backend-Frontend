@@ -81,7 +81,7 @@ namespace SIS.Controllers
             return View();
         }
 
-        public IActionResult ExamResultAdd(string studentNo, string lessonName)
+        public IActionResult ExamResultAdd(string? studentNo, string? lessonName)
         {
             // Veritabanından öğrenci numarasına ve ders ismine göre ilgili kaydı bulun
             var examResult = _context.ExamResults.FirstOrDefault(e => e.StudentNo == studentNo && e.LessonName == lessonName);
