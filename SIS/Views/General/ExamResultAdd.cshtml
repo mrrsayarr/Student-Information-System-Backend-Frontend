@@ -1,7 +1,7 @@
-﻿@model SIS.Models.Students
+﻿@model SIS.Models.Generals
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Add Result Exam Page";
 }
 
 <!DOCTYPE html>
@@ -71,7 +71,7 @@
                                 <a class="nav-link" asp-area="" asp-controller="General" asp-action="ConsultantInfo">Consultant Information</a>
                                 <a class="nav-link" asp-area="" asp-controller="General" asp-action="LessonTaken">Lessons Taken</a>
                                 <a class="nav-link" asp-area="" asp-controller="General" asp-action="ExamSchedule">Exam Schedule</a>
-                                <a class="nav-link" asp-area="" asp-controller="Home"    asp-action="Index">Syllabus <!--Mufredat--></a>
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Syllabus <!--Mufredat--></a>
                                 <a class="nav-link" asp-area="" asp-controller="General" asp-action="IntershipInfo">Internship Information</a>
                                 <a class="nav-link" asp-area="" asp-controller="General" asp-action="YOKSIS">YOKSIS Transactions </a>
                             </nav>
@@ -119,68 +119,27 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">SIS AMASYA</h1>
-                    <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">General Information</li>
-                    </ol>
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
-                                <div class="card-body">My future exams</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="exam_results.html">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
+                    <h1>Exam Result Add</h1>
+
+                    @*<form asp-controller="General" asp-action="SaveExamResult" method="post">
+                        <div class="form-group">
+                            <label for="studentNo">Student Number:</label>
+                            <input type="text" class="form-control" id="studentNo" name="StudentNo" value="@Model.StudentNo" readonly>
                         </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
-                                <div class="card-body">Solved Exams</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="exam_results.html">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label for="lessonName">Lesson Name:</label>
+                            <input type="text" class="form-control" id="lessonName" name="LessonName" value="@Model.LessonName" readonly>
                         </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
-                                <div class="card-body">Success Exams</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="exam_results.html">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label for="midterm">Midterm:</label>
+                            <input type="number" class="form-control" id="midterm" name="Midterm" value="@Model.Midterm">
                         </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
-                                <div class="card-body">Failed exams</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="exam_results.html">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label for="final">Final:</label>
+                            <input type="number" class="form-control" id="final" name="Final" value="@Model.Final">
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-area me-1"></i>
-                                    Exam Results
-                                </div>
-                                <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-bar me-1"></i>
-                                    ----
-                                </div>
-                                <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-                            </div>
-                        </div>
-                    </div>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>*@
                 </div>
             </main>
         </div>

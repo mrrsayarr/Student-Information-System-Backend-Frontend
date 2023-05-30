@@ -9,5 +9,6 @@
         public double? Final { get; set; }
         public double? Average { get; set; }
         public bool? Pass { get; set; }
+
     }
 }
