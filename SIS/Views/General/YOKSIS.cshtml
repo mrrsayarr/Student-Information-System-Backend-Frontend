@@ -1,6 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<SIS.Models.OsymInfo>
 
 @{
     ViewData["Title"] = "YOKSIS Information";
@@ -123,10 +121,44 @@
                         <font color="#003399" size="6">2020-YKS Placement Results</font>
                         <font size="3"><br>Result Announcement Date: 26 August 2020</font>
                         <p></p>
-                        <p id="foto"><img src="assets/img/user.png" alt="adayFoto" width="120px"></p>
-                        <table border="1"><tbody><tr><th>T.R. Identification number</th><td>12345678910</td></tr><tr><th>Name and surname</th><td>İBRAHİM SEZER</td></tr></tbody></table>
+                        @*<p id="foto"><img src="assets/img/user.png" alt="adayFoto" width="120px"></p>*@
+                        @*<table border="1"><tbody><tr><th>T.R. Identification number</th><td>12345678910</td></tr><tr><th>Name and surname</th><td>İBRAHİM SEZER</td></tr></tbody></table>*@
                         <p></p>
-                        <table border="1" width="800">
+
+                        <table border="1" class="table table-bordered table-responsive w-100">
+                            <tr>
+                                <th>ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Identification Number</th>
+                                <th>University Name</th>
+                                <th>Department</th>
+                                <th>Point Type</th>
+                                <th>Point</th>
+                                <th>Registration Date</th>
+                                <th>Placement Type</th>
+                                <th>Registration Address</th>
+                                <th>Placement Order</th>
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.FirstName</td>
+                                    <td>@item.LastName</td>
+                                    <td>@item.IdentificationNumber</td>
+                                    <td>@item.UniversityName</td>
+                                    <td>@item.Department</td>
+                                    <td>@item.PointType</td>
+                                    <td>@item.Point</td>
+                                    <td>@item.RegistrationDate</td>
+                                    <td>@item.PlacementType</td>
+                                    <td>@item.RegistrationAddress</td>
+                                    <td>@item.PlacementOrder</td>
+                                </tr>
+                            }
+                        </table>
+                        @*<table border="1" width="800">
                             <tbody>
                                 <tr>
                                     <th class="C" colspan="3">
@@ -172,21 +204,8 @@
                                 <tr><td colspan="2">Şeyhcui Mah. Kemal Nehrozoğlu Cad. Yeşilırmak Yerleşkesi Merkez/AMASYA </td></tr>
                                 <tr><td colspan="2"> AMASYA </td></tr>
                             </tbody>
-                        </table>
+                        </table>*@
                     </div>
-
-                    <footer class="py-4 bg-light mt-auto">
-                        <div class="container-fluid px-4">
-                            <div class="d-flex align-items-center justify-content-between small">
-                                <div class="text-muted">Copyright &copy; SIS AMASYA 2023</div>
-                                <div>
-                                    <a href="#">Privacy Policy</a>
-                                    &middot;
-                                    <a href="#">Terms &amp; Conditions</a>
-                                </div>
-                            </div>
-                        </div>
-                    </footer>
                 </div>
             </main>
         </div>

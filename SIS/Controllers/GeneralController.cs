@@ -39,7 +39,9 @@ namespace SIS.Controllers
 
         public IActionResult ConsultantInfo()
         {
-            return View();
+            List<AcademisModel> ConsultantInfo = _context.Academist.ToList();
+
+            return View(ConsultantInfo);
         }
 
 
@@ -63,7 +65,9 @@ namespace SIS.Controllers
 
         public IActionResult IntershipInfo()
         {
-            return View();
+            List<StudentInternship> SIntership = _context.StudentInternship.ToList();
+
+            return View(SIntership);
         }
 
         public IActionResult LessonTaken()
@@ -73,7 +77,9 @@ namespace SIS.Controllers
 
         public IActionResult YOKSIS()
         {
-            return View();
+            List<OsymInfo> osym = _context.OsymInformations.ToList();
+
+            return View(osym);
         }
 
         public IActionResult AcademicCalendar()
